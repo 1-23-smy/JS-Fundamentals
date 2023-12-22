@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1 id="h11">Your key is</h1>
+    <script>
+        document.addEventListener('keydown',(e)=>{
+           document.querySelector('#h11').innerHTML=`Your key is ${e.key===" " ? "space":e.key}`
+        })
+    </script>
+</body>
+</html>
