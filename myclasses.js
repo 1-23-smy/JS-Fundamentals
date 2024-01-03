@@ -1,49 +1,50 @@
-//ES6
-// class User {
-//     constructor(username, email, password) {
-//         this.username = username;
-//         this.email = email;
-//         this.password = password;
-//     }
-//     logMe() {
-//         console.log(`The username is ${this.username}`);
-//     }
+// ES6
+class User {
+    constructor(username, email, password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+    logMe() {
+        console.log(`The username is ${this.username}`);
+    }
 
-//     encryptPassword() {
-//         console.log(`password is ${Math.random().toLocaleString() + this.password}`)
-//     }
-// }
+    // encryptPassword(password) {
+    //     this.password=password
+    //     console.log(`password is + ${this.password}`)
+    // }
+}
 
-// class smallUser extends User {
-//     constructor(password) {
-//         super()
-//         this.password = password
-//     }
-
-
-
-// }
-
-// const user = new User("SMY", "s@gmail.com", 123);
-
-// user.encryptPassword()
-
-// const su = new smallUser(123)
-// su.encryptPassword()
+class smallUser extends User {
+    constructor(password) {
+        super(password)
+    }
 
 
-//Before ES6
 
-function User(username, email, password) {
+}
+
+const user = new User("SMY", "s@gmail.com", 123);
+
+user.encryptPassword()
+
+const su = new smallUser(123)
+console.log(su);
+
+
+
+// Before ES6
+
+function Users(username, email, password) {
     this.username = username;
     this.email = email;
     this.password = password;
 }
 
-User.prototype.encryptPassword = function () {
+Users.prototype.encryptPassword = function () {
     console.log(`${Math.random().toLocaleString() + this.password}`);
 }
 
-const newUser = new User("SMY", "s@gmail.com", 123);
+const newUser = new Users("SMY", "s@gmail.com", 123);
 
 newUser.encryptPassword()
